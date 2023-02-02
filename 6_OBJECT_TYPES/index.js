@@ -59,3 +59,10 @@ const myNumberArray = [1, 2, 3, 4, 5];
 console.log(myNumberArray);
 const user = ['Pedro', 20];
 console.log(user);
+// 9 - tuplas com readyonly
+function showNumbers(...numbers) {
+    // numbers[0] = 12
+    console.log(numbers[0]);
+    console.log(numbers[1]);
+}
+showNumbers(3, 88665);
