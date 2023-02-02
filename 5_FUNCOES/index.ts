@@ -94,3 +94,24 @@ function doSomething(x: unknown) {
         console.log(x[0])
     }
 }
+
+// 9 - never
+function showErrorMessage(msg: string): never {
+    throw new Error(msg)
+}
+
+// showErrorMessage("Error")
+
+// 10 - Rest operator
+function sumAll(...n: number[]): void {
+    console.log(n.reduce((number, sum) => sum + number))
+}
+
+sumAll(12,1,1,23,4,5,6,32)
+
+// 11 - destructuring como parametro
+function showProdtctDetails({name, price}: {name: string, price: number}):string {
+    return `O nopme do produto é ${name} e ele custa R$${price}`
+}
+
+console.log(showProdtctDetails({name:"Camisa", price:14}))
