@@ -88,4 +88,12 @@ const p = document.getElementById("some-p");
 console.log(p.innerText);
 // 16 - bigint
 let n;
-n = 1;
+// n = 1
+n = 1000n;
+// 17 - Symbol
+const symbolA = Symbol("A");
+const symbolB = Symbol("A");
+console.log(symbolA);
+console.log(symbolB);
+console.log(symbolA == symbolB);
+console.log(symbolA === symbolB);

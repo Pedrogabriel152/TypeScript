@@ -155,4 +155,14 @@ console.log(p!.innerText)
 // 16 - bigint
 let n: bigint
 
-n = 1
+// n = 1
+n = 1000n
+
+// 17 - Symbol
+const symbolA: symbol = Symbol("A")
+const symbolB: symbol = Symbol("A")
+
+console.log(symbolA)
+console.log(symbolB)
+console.log(symbolA == symbolB)
+console.log(symbolA === symbolB)
