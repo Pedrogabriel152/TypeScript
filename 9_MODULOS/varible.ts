@@ -1,0 +1,1 @@
+export const x: string = "Variavel de exportação"
