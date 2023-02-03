@@ -39,3 +39,14 @@ class Car {
 const car = new Car('Fusca')
 
 console.log(car)
+
+// 4 - herença e super
+class Machine{
+    name
+
+    constructor(name: string){
+        this.name = name
+    }
+}
+
+const 

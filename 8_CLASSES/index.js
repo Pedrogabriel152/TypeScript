@@ -24,3 +24,10 @@ class Car {
 }
 const car = new Car('Fusca');
 console.log(car);
+// 4 - herença e super
+class Machine {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const ;
