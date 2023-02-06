@@ -9,11 +9,12 @@ import { ITask } from '../../../interfaces/ITask';
 interface Props {
     btnText: string;
     taskList: ITask[];
-    task?: ITask | null
+    task?: ITask | null;
+    handleUpdate?(id: number, title: string, difficulty: number): void;
     setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
 }
 
-const TaskForm = ({ btnText, taskList, setTaskList, task }: Props) => {
+const TaskForm = ({ btnText, taskList, setTaskList, task, handleUpdate }: Props) => {
 
     const [id, setId] = useState<number>(0)
     const [title, setTitle] = useState<string>('')
@@ -22,13 +23,21 @@ const TaskForm = ({ btnText, taskList, setTaskList, task }: Props) => {
     const addTaskHandle = (e: FormEvent<HTMLFormElement>) => {
         
         e.preventDefault();
-        const id: number = Math.floor(Math.random() * 10000)
-        const newTask: ITask = { id, title, difficulty }
+        if(handleUpdate) {
 
-        setTaskList!([...taskList, newTask])
-        
-        setTitle('')
-        setDifficulty(0)
+            handleUpdate(id, title, difficulty)
+
+        } else {
+            const id: number = Math.floor(Math.random() * 10000)
+            const newTask: ITask = { id, title, difficulty }
+
+            setTaskList!([...taskList, newTask])
+            
+            setTitle('')
+            setDifficulty(0)
+
+            return
+        }
 
     };
 
